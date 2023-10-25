@@ -3,7 +3,7 @@ import openai
 import pymongo
 
 # mongodb
-clientUrl = pymongo.MongoClient("mongodb+srv://todolist.inmadjo.mongodb.net/")
+clientUrl = pymongo.MongoClient("#mongodb uri#")
 DB = clientUrl["chatbotdatabase"]
 col = DB["users"]
 # open ai
