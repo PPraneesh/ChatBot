@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYBER CHATBOT</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='sign.css')}}">
+</head>
+
+<body>
+    <h1>CYBER-SECURITY CHATBOT</h1>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+        <div class="msg">
+        <p>{{ message }}</p>
+    </div>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    {% if error %}
+    <div class="error">
+        <p>{{ error }}</p>
+    </div>
+    {% endif %}
+    <div class="center">
+        <div class="container">
+            <div class="login form">
+                <header>Login</header>
+                <form action="/login" method="post">
+                    <input type="email" name="email" placeholder="Enter your email">
+                    <input type="password" name="password" placeholder="Enter your password">
+                    <input type="submit" class="button" value="Login">
+                </form>
+
+                <div class="signup">
+                    <span class="signup">Don't have an account?
+                        <a href="/register">Signup</a> </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
